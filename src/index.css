@@ -74,6 +74,12 @@ h2 {
 	font-weight: normal;
 }
 
+p[role="error"] {
+	display: inline;
+	margin-left: 10px;
+	color: #df0f0f;
+}
+
 .btn {
 	display: inline-block;
 	background: green;

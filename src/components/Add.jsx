@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import { useState } from "react";
 
 const empDetails = {
@@ -71,7 +72,7 @@ export default function Add({ onAdd }) {
 						onChange={handleChange}
 						onBlur={handleBlur}
 					/>
-					<p style={{ color: "red" }}>
+					<p role="error">
 						{(touched.fullname || isValid) && errors.fullname}
 					</p>
 				</div>
@@ -86,9 +87,7 @@ export default function Add({ onAdd }) {
 						onChange={handleChange}
 						onBlur={handleBlur}
 					/>
-					<p style={{ color: "red" }}>
-						{(touched.DOB || isValid) && errors.DOB}
-					</p>
+					<p role="error">{(touched.DOB || isValid) && errors.DOB}</p>
 				</div>
 				<div className="form-control">
 					<label htmlFor="department">Select Department:</label>{" "}
@@ -106,7 +105,7 @@ export default function Add({ onAdd }) {
 						<option value="Human Resource">HR Department</option>
 						<option value="Sales & Marketing">Sales and marketing</option>
 					</select>
-					<p style={{ color: "red" }}>
+					<p role="error">
 						{(touched.department || isValid) && errors.department}
 					</p>
 				</div>
@@ -121,7 +120,7 @@ export default function Add({ onAdd }) {
 						onChange={handleChange}
 						onBlur={handleBlur}
 					/>
-					<p style={{ color: "red" }}>
+					<p role="error">
 						{(touched.experience || isValid) && errors.experience}
 					</p>
 				</div>
