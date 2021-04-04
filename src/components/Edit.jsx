@@ -1,13 +1,17 @@
 /* eslint-disable jsx-a11y/aria-role */
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import NotFound from "../components/Notfound";
 
 export default function Edit({ findEmployee, onEdit }) {
 	const { id } = useParams();
+
 	const searchedEmployee = findEmployee(parseInt(id));
 
 	const [employee, setEmployee] = useState(searchedEmployee);
 	const [touched, setTouched] = useState({});
+
+	if (!searchedEmployee) return <NotFound />;
 
 	const errors = getErrors(employee);
 	const isValid = Object.keys(errors).length === 0;

@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Add from "./components/Add";
 import List from "./components/List";
 import Edit from "./components/Edit";
+import NotFound from "./components/Notfound";
 
 function App() {
 	const navigate = useNavigate();
@@ -64,6 +65,7 @@ function App() {
 							<Edit findEmployee={findEmployee} onEdit={editEmployee} />
 						}
 					/>
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</main>
 		</div>
